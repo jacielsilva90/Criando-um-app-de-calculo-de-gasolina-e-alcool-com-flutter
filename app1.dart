@@ -1,3 +1,8 @@
+
+//Em flutter, para alterar o estado de tela do app devemos usar setState.
+//A funçao setState é exclusiva da classe Statefulwidget. 
+//Logo a tela deve ser criada em uma classe extendida de Statefulwidget.
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 void main() {
@@ -17,6 +22,7 @@ class MyApp extends StatelessWidget {//StatelessWidget é classe pai
     );
   }
 }
+//criamos uma classe estendida de statefulwidget e nela criamos um estado.
 class MyHomePage extends StatefulWidget { //StatefulWidget é classe pai 
   const MyHomePage({super.key, required this.title});
   final String title;
