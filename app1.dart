@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget {//StatelessWidget é classe pai
   @override //sobrecrita do metodo build() de statelesswidget
   Widget build(BuildContext context) { //constroi o widget materialapp
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, //remove a faixa de debug no canto da tela
       title: 'meu app Flutter', 
-      theme: ThemeData(
+      theme: ThemeData( //define o tema do app
         colorScheme: .fromSeed(seedColor: Colors.lightBlue),
       ),
       home: const MyHomePage(title: 'minha Flutter Home'),
@@ -55,14 +55,11 @@ class _MyHomePageState extends State<MyHomePage> { //chama _myhomepagestate herd
 
   @override //sobrescreve build() da claasse pai
   Widget build(BuildContext context) { // constroi o widget scaffold
-    return Scaffold( 
+    return Scaffold( //forma a tela do app
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,        
         title: const Text('Gasolina x Alcool'), //(widget.title),
         centerTitle: true,
-        //actions: <Widget>[
-          //Icon(Icons.local_grocery_store),
-        //],
       ),
       body: Center(
         child: Column(
@@ -83,13 +80,13 @@ class _MyHomePageState extends State<MyHomePage> { //chama _myhomepagestate herd
                 keyboardType: TextInputType.number,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
-                ],
+                ], //filtro que so aceita numeros
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   border: UnderlineInputBorder(),
                   labelText: '  Valor da Gasolina',
                 ),
-                controller: _controller,
+                controller: _controller, // captura os dados
               ),
             ),
             SizedBox(
@@ -108,13 +105,12 @@ class _MyHomePageState extends State<MyHomePage> { //chama _myhomepagestate herd
               ),
             ),
             FloatingActionButton.extended(
-              onPressed: _incrementCounter,
+              onPressed: _incrementCounter, //chama a função de calculo
               label: Text('Calcular'),
             ),
             Text(''),
             Text(
               ' $counter',
-              //counter>=70 ? 'Resultado $counter melhor Alcool' : 'resultado $counter melhor Gasolina',
               
             ),
 
